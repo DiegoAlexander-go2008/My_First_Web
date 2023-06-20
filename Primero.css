@@ -94,7 +94,7 @@ header div div a:hover {
     border: 1px solid rgba(000,000,000, 0.3);
     border-radius: 10px;
     overflow: hidden;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: ease .3s;
     
 }
@@ -127,4 +127,25 @@ footer p {
     text-align: center;
     font-weight: bold;
     color: white;
+}
+
+@media (max-width: 800px) {
+    header {
+        height: 350px;
+    } 
+    .gallery div{
+        width: 45%;
+    }
+    footer {
+        padding: 60px 0px;
+    }
+}
+
+@media (max-width: 500px){
+    header {
+        height: 320px;
+    }
+    .gallery div {
+        width: 90%;
+    }
 }
