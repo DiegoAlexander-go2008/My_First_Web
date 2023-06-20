@@ -158,4 +158,7 @@ footer p {
     .gallery div {
         border-radius: 4px;
     }
+    header div div h1 {
+        font-size: 30px;
+    }
 }
