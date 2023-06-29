@@ -5,6 +5,11 @@ box-sizing: border-box;
 font-family: 'Roboto Condensed';
 
 }
+:root {
+    --color1: white;
+    --color2:black;
+    
+}
 body {
     background-color: rgb(219, 219, 219);
 }
@@ -26,13 +31,13 @@ header {
 
 nav {
     width: 100%;
-    background-color:white;
+    background-color:var(--color1);
 }
 
 nav a {
     display:inline-block;
     text-decoration: none;
-    color: black;
+    color: var(--color2);
     padding: 20px;
     transition: ease .15s;
     
@@ -40,8 +45,8 @@ nav a {
 
 nav a:hover {
     transition: ease .3s;
-    background-color: black;
-    color: white;
+    background-color: var(--color2);
+    color: var(--color1);
     
 }
 
@@ -49,43 +54,46 @@ header div {
     width: 100%; 
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    /* Usamos flex direction para determinar la posicion del header (texto), en este caso lo posicionamos de vertical (column) */
     align-items: center;
+    /* Se encarga de alinerar los elementos flexible, en este caso se usa para alinear "comprar" */
     justify-content: center;
+    /* Se encarga de justificar los elementos flexibles, en este caso sirvió para justificar los elementos "Mundo Neumatico" y "comprar" */
 }
 
 header div div h1 {
     text-align: center;
     display: block;
-    color:white;
+    color:var(--color1);
     font-size: 45px;
 }
 
 header div div a {
     display: block;
     margin: auto;
-    color: white;
-    border: 1px solid white;
+    color: var(--color1);
+    border: 1px solid var(--color1);
     padding: 6px 10px; font-weight: bold; margin: 5px;
     transition: ease .3s;
 }
 
 header div div a:hover {
     transition: ease .3s;
-    background-color: white;
-    color: black;
+    background-color: var(--color1);
+    color: var(--color2);
 
 }
 
 .gallery {
-    background-color: white;
+    background-color: var(--color1);
     width: 100%;
     display: flex;
     padding: 50px;
     align-items: start;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1vw;
 
 }
 
@@ -94,7 +102,6 @@ header div div a:hover {
     border: 1px solid rgba(000,000,000, 0.3);
     border-radius: 10px;
     overflow: hidden;
-    opacity: 0.9;
     transition: ease .3s;
     
 }
@@ -109,12 +116,21 @@ header div div a:hover {
     width: 100%;
     height: 160px;
     object-fit: cover;
+    opacity: 0.9;
 }
+
+
+.gallery div:hover img {
+opacity: 1;
+
+}
+
 
 .gallery div p {
     padding: 10px;
     font-weight: bold;
     text-align: center;
+    color: var(--color2);
 }
 
 footer {
@@ -126,7 +142,7 @@ footer {
 footer p {
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: var(--color1);
 }
 @media (max-width: 1000px) {
     main {
@@ -147,13 +163,13 @@ footer p {
     }
 }
 
-@media (max-width: 500px){
-    header {
 
-    }
+@media (max-width: 500px){
+
+
     .gallery {
         padding: 10px;
-        gap: 5px;
+
     }
     .gallery div {
         border-radius: 4px;
@@ -161,4 +177,80 @@ footer p {
     header div div h1 {
         font-size: 30px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Inicio de los estilos index*/
+
+.index {
+    padding: 30px;   
+    margin-bottom: 80px; 
+}
+.index h2 {
+    text-align: center;
+    margin: 
+    60px;
+    font-size: 38px;
+}
+.index  article {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+   
+    
+}
+.index article div {
+    width: 40%;
+
+}
+
+.index article div div {
+    margin: auto;
+}
+.informacion {
+    text-align:center;
+}
+.informacion h3 {
+    font-size: 24px;
+    margin: 20px 10px;
+    border-bottom: 3px solid rgb(215, 80, 8);
+    display: block;
+}
+.informacion p {
+    line-height: 25px;
+}
+
+.informacion button {
+    background-color: rgb(247, 122, 55) ;
+    color: var(--color2);
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 8px 14px;
+   text-decoration: none;
+   font-weight: bold;
+   border-style: none;
+
+}
+
+.informacion button:hover {
+    transition: ease 0.2s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    color: var(--color1)
+}
+
+.index article .imagen img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.3);
 }
